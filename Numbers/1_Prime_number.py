@@ -1,19 +1,17 @@
-n = int(input("Enter the number:"))
-flag = False
+def isPrime(n):
+    flag = True
+    if n <= 1:
+        flag = False
 
-if n < 0:
-    print("Negative numbers are not consider..")
-
-elif n == 1:
-    print("Its is not a Prime number")
-
-elif n > 1:
     for i in range(2,n):
         if n % i == 0:
-            flag = True
+            flag = False
             break
-    if flag:
-        print("Its is not a prime")
-    else:
-        print("It is a Prime Number")
 
+    if flag == True:
+        print("Prime Number")
+    else:
+        print("Not a Prime Number")
+
+n = int(input("Enter the number:"))
+isPrime(n)
